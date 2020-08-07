@@ -57,7 +57,7 @@ public class User {
     @NotEmpty(message = "Please enter your country of residence")
     public String country;
     
-    private Date dateOfBirth;
+    private String dateOfBirth;
     
     private int active;
     
@@ -72,7 +72,7 @@ public class User {
 	private Date createdAt;
     
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "tracking_id"))
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
     
     @ManyToMany(cascade = CascadeType.ALL)
@@ -94,7 +94,7 @@ public class User {
 			@Length(min = 7, message = "Your password must have at least 7 characters") @NotEmpty(message = "Please provide a password") String password,
 			@NotEmpty(message = "Please enter your first name") String firstName, @NotEmpty(message = "Please enter your last name") String lastName,
 			@NotEmpty(message = "Please enter your city or town of residence") String city, String state,
-			@NotEmpty(message = "Please enter your country of residence") String country, Date dateOfBirth, int active, Double overall_rating,
+			@NotEmpty(message = "Please enter your country of residence") String country, String dateOfBirth, int active, Double overall_rating,
 			String designation, ArrayList<Rating> ratingsRecieved, Date createdAt,
 			Set<Role> roles, List<User> trackers, List<User> tracking, String nameString) {
 		super();
@@ -183,11 +183,11 @@ public class User {
 		this.country = country;
 	}
 	
-	public Date getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

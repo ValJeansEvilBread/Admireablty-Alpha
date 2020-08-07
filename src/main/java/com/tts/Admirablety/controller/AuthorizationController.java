@@ -24,26 +24,26 @@ public class AuthorizationController {
 
     @Autowired
     private UserService userService;
-
+    
     @GetMapping(value="/login")
     public String login(){
-        return "index";
+        return "login";
     }
     
     @RequestMapping("/")
     @ResponseBody
     String index() {
-      return "index";
+      return "login";
     }
     
-    @GetMapping(value="/register")
+    @GetMapping(value="/signup")
     public String registration(Model model){
         User user = new User();
         model.addAttribute("user", user);
         return "registration";
     }
 
-    @PostMapping(value = "/register")
+    @PostMapping(value = "/signup")
     public String createNewUser(@Valid User user, BindingResult bindingResult, Model model) {
         User userExists = userService.findByUsername(user.getUsername());
         if (userExists != null) {
