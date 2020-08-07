@@ -148,15 +148,18 @@ public class UserController {
     }
         
     
-    /*
+
     //Get method for the last five ratings given to the user as the subject
+    /*
     @GetMapping
     public String getSubjectsLastFive(User subject, Model model) {
-    	List<Rating> ratings = ratingService.findLastFiveForSubject(subject);
+    	List<Rating> ratings = userService.findLastFiveForSubject(subject);
     	model.addAttribute("subjectsRatingList",ratings); 
         return "subjectsLastFive";
     }
+    */
     
+    /*
   //Get method for the last five ratings given by the user as the rater
     @GetMapping
     public String getRatersLastFive(User rater, Model model) {
@@ -170,23 +173,6 @@ public class UserController {
     
     
     
-    
-    /*
-    
-    @GetMapping(value= {"/tweets", "/"})
-    public String displayFeed(Model model){
-        List<Rating> tweets = ratingService.findAll();
-        model.addAttribute("tweetList", tweets);
-        return "feed"; 
-    }
-    
-    @GetMapping(value = "/tweets/new")
-    public String displayTweetForm(Model model) {
-        model.addAttribute("tweet", new Rating());
-        return "newTweet";
-    }
-    
-    */
-    
+  
 }
 

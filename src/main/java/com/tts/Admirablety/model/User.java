@@ -64,7 +64,7 @@ public class User {
     //New unrated users are a 2.0 by default
     public Double overall_rating = 2.0;
     
-    public String designation;
+    public String designation = "Newbie";
     
     public ArrayList<Rating> ratingsRecieved = new ArrayList<Rating>();
     
@@ -96,7 +96,7 @@ public class User {
 			@NotEmpty(message = "Please enter your city or town of residence") String city, String state,
 			@NotEmpty(message = "Please enter your country of residence") String country, String dateOfBirth, int active, Double overall_rating,
 			String designation, ArrayList<Rating> ratingsRecieved, Date createdAt,
-			Set<Role> roles, List<User> trackers, List<User> tracking, String nameString) {
+			Set<Role> roles, List<User> trackers, List<User> tracking) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -116,7 +116,7 @@ public class User {
 		this.roles = roles;
 		this.trackers = trackers;
 		this.tracking = tracking;
-		this.nameString = nameString;
+		this.nameString = firstName + " " + lastName + " " + username;
 	}
 
 	public String getEmail() {

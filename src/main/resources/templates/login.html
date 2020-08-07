@@ -13,12 +13,15 @@
 	<div class = "container">
 	
 		<div th:replace="fragments/navbar"></div>
-	
+		<br>
+        <br>
+        <br>
 		<div class = "row">
-			<div class = "col-md-6 col-md-offset-3">
+			<div class=centerAndSixtyWidth>
 			
 				
-				<h1> User Login Page </h1>
+				<h4 align="center"> Log In</h4>
+				<h5 align="center">so you can rate 'em! </h5>
 				<form th:action="@{/login}" method="post">
 					
 					<!-- error message -->
@@ -35,13 +38,14 @@
 					<div>
 					<input type="text" id="username" name="username" th:placeholder="Username" class="form-control"/> <br/>
             		<input type="password" th:placeholder="Password" id="password" name="password" class="form-control"/> <br/>
-            		<button class="btn btn-md btn-success btn-block" name="Submit" value="login" type="Submit">Log in</button>
+            		<button class="btn btn-md btn-success btn-block" name="Submit" value="Login" type="Submit">Log in</button>
 					</div>
 				</form>
-				<div>
-					<h5>New user?</h5>
-				</div>
 				<br>
+				<br>
+				<div>
+					<h5 style="text-align:center">New user?</h5>
+				</div>
 				<div>
         		<a th:href="@{/signup}"><button class= "btn btn-md btn-outline-success btn-block">Sign Up!</button></a> 
     			</div>

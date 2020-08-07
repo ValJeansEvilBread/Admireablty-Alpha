@@ -36,7 +36,6 @@ public class Rating {
 	private Date createdAt;
 	
 	public Rating() {}
-
 	
 	public Rating(Long id, User rater, User subject, Integer stars_given, Date createdAt) {
 		super();

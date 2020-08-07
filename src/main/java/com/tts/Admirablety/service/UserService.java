@@ -3,6 +3,7 @@ package com.tts.Admirablety.service;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -108,6 +109,17 @@ public class UserService {
     	}
     	subject.setDesignation(designation);
     }
+    
+    
+    //Method to get last five ratings received for user and pass to User Controller
+    /*
+    public List<Rating> findLastFiveForSubject(User subject) {
+    	List<Rating>ratingsForSubjectList = subject.getRatingsRecieved();
+    	List<Rating> sortedRatingsForSubjectList = ratingsForSubjectList.sort(Comparator.comparing(Rating::getCreatedAt()));
+    	List<Rating> lastFiveRatingsForSubject = ratingsForSubjectList.subList(0, 5);
+    	return lastFiveRatingsForSubject;
+    }
+    */
     
     
     
